@@ -1,4 +1,5 @@
 #!/usr/bin/env groovy
+def call(){
 //comment
 node ('docker'){
     checkoutFromRepo('main', 'https://github.com/Maniako97/cloudcamp-jenkins-lab', 'git-credentials')
@@ -43,4 +44,5 @@ def pushDockerImage()
         sh 'docker tag python-hello-world:1.0.0-beta.1 145675154975.dkr.ecr.us-east-1.amazonaws.com/hello-world-python:1.0.0-beta.1'
         sh 'docker push 145675154975.dkr.ecr.us-east-1.amazonaws.com/hello-world-python:1.0.0-beta.1'
     }
+}
 }
